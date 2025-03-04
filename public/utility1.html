@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          spacing: {
+            13: '3.25rem'
+          },
+          fontFamily: {
+            inter: ['Inter']
+          },
+          colors: {
+            wpu: '#bada55',
+            kopi: 'c0ffee',
+          }
+        },
+      },
+    }
+  </script>
+  <title>Belajar tailwindcss</title>
+  <style type="text/tailwindcss"></style>
+</head>
+
+<body>
+  <h1 class="text-8xl font-bold text-center my-10">Mari Belajar <span
+      class="bg-gradient-to-r from from-blue-500 to-teal-400 bg-clip-text text-transparent">TailwindCSS</span></h1>
+
+  <section class="mb-10 bg-gradient-to-r from-indigo-200 via-red-400 to bg-yellow-300">
+    <h2 class="text-3xl text-center">spacing</h2>
+    <div class="m-13">Margin</div>
+    <div class="py-8">Padding</div>
+  </section>
+
+  <section class="mb-10 bg-green-200">
+    <h2 class="text-3xl text-center">Sizing</h2>
+    <div class="w-32 h-32 bg-yellow-200">Kotak 1</div>
+  </section>
+
+  <section class="font-inter max-w-3xl mx-auto">
+    <h2 class="mb-2 text-4xl font-bold">Belajar  Typography pada TailwindCSS</h2>
+    <div class="mb-4 text-lg text-pink-600">By <a href="#" class="font-semibold" class="text-blue-600">Muhammad Fawwaz Dhiaulhaq Hud</a>, 30-04-2005</div>
+    <p class="mb-4">Lorem, ipsum dolor sit amet <a href="#"
+        class="underline font-semibold text-gray-600">consectetur</a> adipisicing
+      elit. Possimus quo ipsam atque optio natus sunt
+      officiis. Laborum, at illo odio veritatis error, repellat consequatur culpa eius possimus accusantium repudiandae
+      adipisci.</p>
+    <blockquote class="mb-4 italic font-thin text-xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere
+      porro exercitationem rem quia dicta, temporibus, sint ratione ipsum alias labore vel, maxime vitae magnam repellat
+      debitis molestiae. Ratione, fugiat modi!</p>
+  </section>
+
+  <div class="max-w-xl h-96 bg-[#bada55] mx-auto mt-[42px] overflow-y-scroll bg-local " style="background-image: url('https://images.unsplash.com/photo-1740918417127-100b62f7889d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw4fHx8ZW58MHx8fHx8')">
+    <p class="p-5 text-2xl">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere saepe eveniet ex tempora voluptates amet numquam unde eos quibusdam! Rem hic est impedit at modi similique earum voluptate accusantium perspiciatis esse veniam sit qui, quam ipsum, quidem officia inventore! Quibusdam dolorem earum incidunt nisi, aliquam amet harum impedit quisquam inventore.</p>
+</div>
+
+<div class="mt-32 max-w-xl mx-auto h-96 bg-slate-300 
+bg-contain bg-no-repeat 
+bg-center shadow-xl
+ shadow-slate-700 overflow-hidden border-8 flex" 
+ style="background-image: url(./img/1.jpg)"></div>
+<div class="w-[200px] h-[200px] bg-white/30 
+m-auto backdrop-blur-md rounded-full"></div> 
+</div>
+  <div class="mb-96"></div>
+</body>
+
+</html>
