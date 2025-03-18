@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Sign Up</title>
+  </head>
+  <body class="flex items-center justify-center min-h-screen bg-gray-900">
+    <div class="w-full max-w-lg bg-gray-800 rounded-lg shadow-md p-6">
+      <h2 class="text-2xl font-bold text-gray-200 mb-4 text-center">
+        Sign Up ILMU 3
+      </h2>
+      <form id="signupForm" class="flex flex-col">
+        <div class="flex flex-col sm:flex-row gap-4 mb-4">
+          <input
+            id="firstName"
+            placeholder="First Name"
+            class="input-field w-full"
+            type="text"
+            autocomplete="given-name"
+          />
+          <input
+            id="lastName"
+            placeholder="Last Name"
+            class="input-field w-full"
+            type="text"
+            autocomplete="family-name"
+          />
+        </div>
+        <input id="NPM" placeholder="NPM" class="input-field mb-4" type="text" />
+        <input
+          id="email"
+          placeholder="Email"
+          class="input-field mb-4"
+          type="email"
+          autocomplete="email"
+        />
+        <input
+          id="confirmEmail"
+          placeholder="Confirm Email"
+          class="input-field mb-4"
+          type="email"
+        />
+        <input
+          id="password"
+          placeholder="Password"
+          class="input-field mb-4"
+          type="password"
+        />
+        <input
+          id="confirmPassword"
+          placeholder="Confirm Password"
+          class="input-field mb-4"
+          type="password"
+        />
+        <select id="gender" class="input-field mb-4">
+          <option value="">Select Gender</option>
+          <option value="male">Cowok</option>
+          <option value="female">Cewek</option>
+        </select>
+        <input id="age" class="input-field" type="date" />
+        <p class="text-white mt-4">
+          Sudah punya akun?
+          <a class="text-blue-500 hover:underline" href="#">Login</a>
+        </p>
+        <button class="btn-submit w-full" type="submit">Sign Up</button>
+      </form>
+      <p id="notification" class="hidden text-center text-sm mt-4"></p>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("signupForm");
+        const notification = document.getElementById("notification");
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          notification.classList.add("hidden");
+
+          const firstName = document.getElementById("firstName").value.trim();
+          const lastName = document.getElementById("lastName").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const confirmEmail = document.getElementById("confirmEmail").value.trim();
+          const password = document.getElementById("password").value;
+          const confirmPassword = document.getElementById("confirmPassword").value;
+          const gender = document.getElementById("gender").value;
+          const age = document.getElementById("age").value;
+
+          if (!firstName || !lastName || !email || !confirmEmail || !password || !confirmPassword || !gender || !age) {
+            showNotification("All fields are required!", "red");
+            return;
+          }
+          if (email !== confirmEmail) {
+            showNotification("Emails do not match!", "red");
+            return;
+          }
+          if (password.length < 6) {
+            showNotification("Password must be at least 6 characters!", "red");
+            return;
+          }
+          if (password !== confirmPassword) {
+            showNotification("Passwords do not match!", "red");
+            return;
+          }
+
+          showNotification("Sign Up Successful!", "green");
+          form.reset();
+        });
+
+        function showNotification(message, color) {
+          notification.textContent = message;
+          notification.classList.remove("hidden", "text-red-500", "text-green-500");
+          notification.classList.add(color === "red" ? "text-red-500" : "text-green-500");
+        }
+      });
+    </script>
+
+    <style>
+      .input-field {
+        background-color: #2d3748;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 10px;
+        width: 100%;
+        outline: none;
+        transition: background 0.2s;
+      }
+      .input-field:focus {
+        background-color: #4a5568;
+        outline: 1px solid #4299e1;
+      }
+      .btn-submit {
+        background: linear-gradient(to right, #667eea, #764ba2);
+        color: white;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 6px;
+        margin-top: 10px;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .btn-submit:hover {
+        background: linear-gradient(to right, #5a67d8, #6b46c1);
+      }
+    </style>
+  </body>
+</html>

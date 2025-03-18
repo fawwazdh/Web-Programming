@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KlinikIn</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h2>Form Pasien</h2>
+    <form id="patientForm">
+        <label for="name">Nama:</label>
+        <input type="text" id="name" required>
+
+        <label for="age">Umur:</label>
+        <input type="number" id="age" required min="1" max="120">
+
+        <label for="complaint">Keluhan:</label>
+        <input type="text" id="complaint" required minlength="5">
+
+        <button type="submit">Tambah Pasien</button>
+    </form>
+    <h2>Daftar Pasien</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Umur</th>
+                <th>Keluhan</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Contoh Nama</td>
+                <td>30</td>
+                <td>Pusing</td>
+                <td>
+                    <button class="edit">Edit</button>
+                    <button class="delete">Hapus</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

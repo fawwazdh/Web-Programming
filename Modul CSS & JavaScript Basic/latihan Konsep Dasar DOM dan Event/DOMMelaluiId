@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latihan DOM</title>
+</head>
+<body>
+
+    <p id="demo"></p>
+
+    <script>
+        document.getElementById("demo").innerHTML = "Hello World!";
+    </script>
+
+</body>
+</html>
